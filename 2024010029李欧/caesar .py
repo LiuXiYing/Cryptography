@@ -1,6 +1,5 @@
 # Lab1 穷举法破解凯撒密码
 ciphertext = "NUFECMWBYUJMBIQGYNBYWIXY"
-
 # 遍历所有可能的密钥 k（1~25）
 for k in range(1, 26):
     plaintext = ""
