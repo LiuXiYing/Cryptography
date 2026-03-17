@@ -1,0 +1,24 @@
+def caesar_decrypt(ciphertext, shift):
+    """
+    凯撒密码解密函数
+    :param ciphertext: 密文（字符串）
+    :param shift: 位移量（整数，1-25之间）
+    :return: 解密后的明文
+    """
+    result = ""
+    for char in ciphertext:
+        if char.isalpha():
+            ascii_offset = ord('A') if char.isupper() else ord('a')
+            decrypted_char = chr((ord(char) - ascii_offset - shift) % 26 + ascii_offset)
+            result += decrypted_char
+        else:
+            result += char
+    return result
+
+# 示例用法
+if __name__ == "__main__":
+    encrypted_text = "Khoor, zruog!"  # 这是 "Hello, world!" 用 shift=3 加密后的结果
+    shift = 3
+    decrypted_text = caesar_decrypt(encrypted_text, shift)
+    print(f"密文: {encrypted_text}")
+    print(f"解密后: {decrypted_text}")
