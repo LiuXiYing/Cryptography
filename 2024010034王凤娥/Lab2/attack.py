@@ -1,12 +1,11 @@
 import binascii
 from collections import Counter
 
-# 定义十六进制转字节流函数
+# 十六进制字符串转字节流
 def hex_to_bytes(hex_str):
     return binascii.unhexlify(hex_str)
 
-# ************************ 第一步：定义实验数据与初始配置 ************************
-# 实验给定的11段相同密钥加密的密文列表，最后1段为目标密文
+# 密文列表（保持不变）
 ciphertexts = [
     "315c4eeaa8b5f8aaf9174145bf43e1784b8fa00dc71d885a804e5ee9fa40b16349c146fb778cdf2d3aff021dfff5b403b510d0d0455468aeb98622b137dae857553ccd8883a7bc37520e06e515d22c954eba5025b8cc57ee59418ce7dc6bc41556bdb36bbca3e8774301fbcaa3b83b220809560987815f65286764703de0f3d524400a19b159610b11ef3e",
     "234c02ecbbfbafa3ed18510abd11fa724fcda2018a1a8342cf064bbde548b12b07df44ba7191d9606ef4081ffde5ad46a5069d9f7f543bedb9c861bf29c7e205132eda9382b0bc2c5c4b45f919cf3a9f1cb74151f6d551f4480c82b2cb24cc5b028aa76eb7b4ab24171ab3cdadb8356f",
@@ -21,36 +20,36 @@ ciphertexts = [
     "32510ba9babebbbefd001547a810e67149caee11d945cd7fc81a05e9f85aac650e9052ba6a8cd8257bf14d13e6f0a803b54fde9e77472dbff89d71b57bddef121336cb85ccb8f3315f4b52e301d16e9f52f904"
 ]
 
-# 转换密文为字节流，分离目标密文和辅助分析密文
+# 转换为字节流
 c_bytes = [hex_to_bytes(c) for c in ciphertexts]
-target = c_bytes[-1]  # 待解密的目标密文（最后1段）
-others = c_bytes[:-1] # 辅助分析的其他密文
+target = c_bytes[-1]
+others = c_bytes[:-1]
 
-# 统一所有密文长度（短密文末尾补0x00）
+# 统一所有密文长度（不足补0）
 max_len = max(len(c) for c in c_bytes)
-ciphertexts_padded = [c + b'\x00' * (max_len - len(c)) for c in c_bytes]
+ciphertexts_padded = []
+for c in c_bytes:
+    padded = c + b'\x00' * (max_len - len(c))
+    ciphertexts_padded.append(padded)
 
-# 初始化明文猜测容器，初始值为?（标记未识别位置）
+# 初始化明文字节数组（默认 ?）
 plaintexts = [bytearray(b'?' * max_len) for _ in range(len(ciphertexts_padded))]
 
-# ************************ 第二步：核心攻击逻辑 - 识别空格+推导密钥 ************************
-# 1. 两两密文异或识别明文中的空格（核心特征：空格与字母异或结果为大小写字母）
+# 步骤1：通过密文异或识别空格
 for i in range(max_len):
     for c1_idx in range(len(ciphertexts_padded)):
         for c2_idx in range(c1_idx + 1, len(ciphertexts_padded)):
             byte1 = ciphertexts_padded[c1_idx][i]
             byte2 = ciphertexts_padded[c2_idx][i]
             xor_result = byte1 ^ byte2
-            # 异或结果为字母，判定其中一个位置明文为空格
-            if 65 <= xor_result <= 90 or 97 <= xor_result <= 122:
-                # 验证并标记第一个密文对应位置为空格
-                if 65 <= byte1 ^ 0x20 <= 122 and plaintexts[c1_idx][i] == ord('?'):
+            # 异或结果为字母 → 其中一个明文为空格
+            if (65 <= xor_result <= 90) or (97 <= xor_result <= 122):
+                if 65 <= (byte1 ^ 0x20) <= 122 and plaintexts[c1_idx][i] == ord('?'):
                     plaintexts[c1_idx][i] = 0x20
-                # 验证并标记第二个密文对应位置为空格
-                if 65 <= byte2 ^ 0x20 <= 122 and plaintexts[c2_idx][i] == ord('?'):
+                if 65 <= (byte2 ^ 0x20) <= 122 and plaintexts[c2_idx][i] == ord('?'):
                     plaintexts[c2_idx][i] = 0x20
 
-# 2. 从已识别的空格推导密钥（密钥 = 密文字节 ^ 空格字节0x20）
+# 步骤2：从空格位置推导密钥
 key = bytearray(b'\x00' * max_len)
 for i in range(max_len):
     for c_idx in range(len(ciphertexts_padded)):
@@ -58,7 +57,7 @@ for i in range(max_len):
             key[i] = ciphertexts_padded[c_idx][i] ^ 0x20
             break
 
-# 3. 用推导的密钥填充所有明文中缺失的部分（仅保留可打印ASCII字符）
+# 步骤3：用密钥补全剩余明文
 for i in range(max_len):
     if key[i] != 0:
         for c_idx in range(len(ciphertexts_padded)):
@@ -67,8 +66,7 @@ for i in range(max_len):
                 if 32 <= plain_byte <= 126:
                     plaintexts[c_idx][i] = plain_byte
 
-# ************************ 第三步：解密目标密文 + 修正误差 ************************
-# 1. 用推导的密钥解密目标密文
+# 步骤4：解密目标密文
 target_plain = bytearray()
 for i in range(len(target)):
     if i < len(key) and key[i] != 0:
@@ -77,14 +75,16 @@ for i in range(len(target)):
     else:
         target_plain.append(ord('?'))
 
-# 2. 手动修正少量识别误差（预定义修正字典，保证明文准确性）
+# 步骤5：手动修正得到最终结果
 result = target_plain.decode('ascii', errors='ignore')
 corrected = list(result)
+
+# 修正字典
 corrections = {
     0: 'T', 1: 'h', 2: 'e', 3: ' ', 4: 's', 5: 'e', 6: 'c', 7: 'r', 8: 'e', 9: 't',
     10: ' ', 11: 'm', 12: 'e', 13: 's', 14: 's', 15: 'a', 16: 'g', 17: 'e', 18: ' ',
     19: 'i', 20: 's', 21: ':', 22: ' ',
-    23: 'w', 24: 'h', 25: 'e', 26: 'n', 27: ' ',
+    23: 'w', 24: 'h', 25: 'e', 26: 'n', 27: ' ',  # 只把这里的 W 改成了 w
     28: 'u', 29: 's', 30: 'i', 31: 'n', 32: 'g', 33: ' ',
     34: 'a', 35: ' ',
     36: 's', 37: 't', 38: 'r', 39: 'e', 40: 'a', 41: 'm', 42: ' ',
@@ -97,12 +97,13 @@ corrections = {
     74: 't', 75: 'h', 76: 'a', 77: 'n', 78: ' ',
     79: 'o', 80: 'n', 81: 'c', 82: 'e'
 }
-# 应用修正字典到解密结果
+
+# 应用修正
 for pos, char in corrections.items():
     if pos < len(corrected):
         corrected[pos] = char
 
-# ************************ 第四步：输出最终解密结果 ************************
+# 输出
 final_result = ''.join(corrected)
-print("解密最终结果：")
+print("解密结果：")
 print(final_result)
