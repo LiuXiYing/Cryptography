@@ -54,14 +54,13 @@
 
 $$
 \begin{aligned}
-(R_0, L_0) &= \text{输入} \\
-R_1 &= R_0 \oplus F(k_1, L_0) \\
-L_1 &= L_0 \\
-R_2 &= R_1 \oplus F(k_2, L_1) = R_0 \oplus F(k_1, L_0) \oplus F(k_2, L_0) \\
-L_2 &= L_1 = L_0 \\
-\text{输出} &= (L_2, R_2) = (L_0,\; R_0 \oplus F(k_1, L_0) \oplus F(k_2, L_0))
+\text{输入} &: (L_0, R_0) \\
+\text{第1轮} &: L_1 = R_0, \quad R_1 = L_0 \oplus F(k_1, R_0) \\
+\text{第2轮} &: L_2 = R_1 = L_0 \oplus F(k_1, R_0), \quad R_2 = L_1 \oplus F(k_2, R_1) = R_0 \oplus F(k_2, R_1) \\
+\text{输出} &: (L_2, R_2)
 \end{aligned}
 $$
+
 
 以下四组数据中，一组是使用随机密钥的 PRP $F_2$ 的输出，而其他三组是真正随机排列 $f: \{0,1\}^{64} \to \{0,1\}^{64}$ 的输出。所有 64 位输出均编码为 16 个十六进制字符。你能判断哪一组是 PRP 的输出吗？
 
