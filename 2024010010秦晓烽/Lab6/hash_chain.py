@@ -35,3 +35,4 @@ if __name__ == "__main__":
     intro_calculated_hash = calculate_hash_chain_root(intro_file)
     print("===== intro.mp4 结果 =====")
     print(f"根哈希值h0：{intro_calculated_hash}")
+    
