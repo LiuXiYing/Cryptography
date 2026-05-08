@@ -41,7 +41,7 @@
 69dda8455c7dd4254bf353b773304eec0ec7702330098ce7f7520d1cbbb20fc388d1b0adb5054dbd7370849dbf0b88d393f252e764f1f5f7ad97ef79d59ce29f5f51eeca32eabedd9afa9329
 ```
 
-**答案：** ___CTR mode is called an arbitrary access construction.___
+**答案：** ___CTR mode lets you build a stream cipher from a block cipher.___
 
 ---
 
@@ -56,6 +56,6 @@
 770b80259ec33beb2561358a9f2dc617e46218c0a53cbeca695ae45faa8952aa0e311bde9d4e01726d3184c34451
 ```
 
-**答案：** ___Always avoid using ECB___
+**答案：** ___Always avoid the two time pad!___
 
 ---
