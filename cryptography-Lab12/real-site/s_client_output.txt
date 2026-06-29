@@ -1,0 +1,154 @@
+CONNECTED(000001D0)
+---
+Certificate chain
+ 0 s:CN=3n7er.space
+   i:C=US, O=Let's Encrypt, CN=E7
+   a:PKEY: EC, (prime256v1); sigalg: ecdsa-with-SHA384
+   v:NotBefore: May 22 12:16:05 2026 GMT; NotAfter: Aug 20 12:16:04 2026 GMT
+-----BEGIN CERTIFICATE-----
+MIIDrTCCAzKgAwIBAgISBfs1VRAm0bp7DpEeAUYNcSniMAoGCCqGSM49BAMDMDIx
+CzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJF
+NzAeFw0yNjA1MjIxMjE2MDVaFw0yNjA4MjAxMjE2MDRaMBYxFDASBgNVBAMTCzNu
+N2VyLnNwYWNlMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbROqq1/jusFvkGm6
+BRMzqgieC8Hca2pfe5a9IRASPGf80kQli0o3aANSIB/8FmYTP/uOf9CtV1C2vHfX
+XDSL0KOCAkIwggI+MA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcD
+ATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBS2AtsZfznb2qmRiDuYitg5FwRs+DAf
+BgNVHSMEGDAWgBSuSJ7chx1EoG/aouVgdAR4wpwAgDAyBggrBgEFBQcBAQQmMCQw
+IgYIKwYBBQUHMAKGFmh0dHA6Ly9lNy5pLmxlbmNyLm9yZy8wQQYDVR0RBDowOIIL
+M243ZXIuc3BhY2WCE2FwcHJvdmUuM243ZXIuc3BhY2WCFGhvbWV3b3JrLjNuN2Vy
+LnNwYWNlMBMGA1UdIAQMMAowCAYGZ4EMAQIBMC0GA1UdHwQmMCQwIqAgoB6GHGh0
+dHA6Ly9lNy5jLmxlbmNyLm9yZy85OS5jcmwwggEMBgorBgEEAdZ5AgQCBIH9BIH6
+APgAdQDXbX0Q0af1d8LH6V/XAL/5gskzWmXh0LMBcxfAyMVpdwAAAZ5P0s0tAAAE
+AwBGMEQCIFIZwRC1K4m3n5FQfkJVp6hdwRkuwaEpHIl4qqjytblTAiBaV2/hzPC2
+gSP2xd4pQbZkhvui5CiajM4v+TOaoTxGpAB/AKgmy+MKxjUSRlM/4GXxTxnZbhkI
+E8Qd2W15ALMSPFUnAAABnk/Szk0ACAAABQAMBbXzBAMASDBGAiEAwlqj4+cnXQGg
++lm2DBkDM1DG6lJ99L00LvclAcIFW8ICIQC784F6tS0/9o6/9HtgAv8LN3wLy0iI
+KA/WqWPl/FGszDAKBggqhkjOPQQDAwNpADBmAjEAsEhNySSLxVPqLdmgzHebRyC6
+04260SbQhsCtK5jwAJvPPFLIXHar0KX3ro3pmt4JAjEAg5xg19d6N1PHgD167BUD
+GMRvbRPrjBAPsYgDdiMLSboP/QEX+j83WPUrhvsIxMHY
+-----END CERTIFICATE-----
+ 1 s:C=US, O=Let's Encrypt, CN=E7
+   i:C=US, O=Internet Security Research Group, CN=ISRG Root X1
+   a:PKEY: EC, (secp384r1); sigalg: sha256WithRSAEncryption
+   v:NotBefore: Mar 13 00:00:00 2024 GMT; NotAfter: Mar 12 23:59:59 2027 GMT
+-----BEGIN CERTIFICATE-----
+MIIEVzCCAj+gAwIBAgIRAKp18eYrjwoiCWbTi7/UuqEwDQYJKoZIhvcNAQELBQAw
+TzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh
+cmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAw
+WhcNMjcwMzEyMjM1OTU5WjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg
+RW5jcnlwdDELMAkGA1UEAxMCRTcwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAARB6AST
+CFh/vjcwDMCgQer+VtqEkz7JANurZxLP+U9TCeioL6sp5Z8VRvRbYk4P1INBmbef
+QHJFHCxcSjKmwtvGBWpl/9ra8HW0QDsUaJW2qOJqceJ0ZVFT3hbUHifBM/2jgfgw
+gfUwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD
+ATASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBSuSJ7chx1EoG/aouVgdAR4
+wpwAgDAfBgNVHSMEGDAWgBR5tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcB
+AQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0g
+BAwwCjAIBgZngQwBAgEwJwYDVR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVu
+Y3Iub3JnLzANBgkqhkiG9w0BAQsFAAOCAgEAjx66fDdLk5ywFn3CzA1w1qfylHUD
+aEf0QZpXcJseddJGSfbUUOvbNR9N/QQ16K1lXl4VFyhmGXDT5Kdfcr0RvIIVrNxF
+h4lqHtRRCP6RBRstqbZ2zURgqakn/Xip0iaQL0IdfHBZr396FgknniRYFckKORPG
+yM3QKnd66gtMst8I5nkRQlAg/Jb+Gc3egIvuGKWboE1G89NTsN9LTDD3PLj0dUMr
+OIuqVjLB8pEC6yk9enrlrqjXQgkLEYhXzq7dLafv5Vkig6Gl0nuuqjqfp0Q1bi1o
+yVNAlXe6aUXw92CcghC9bNsKEO1+M52YY5+ofIXlS/SEQbvVYYBLZ5yeiglV6t3S
+M6H+vTG0aP9YHzLn/KVOHzGQfXDP7qM5tkf+7diZe7o2fw6O7IvN6fsQXEQQj8TJ
+UXJxv2/uJhcuy/tSDgXwHM8Uk34WNbRT7zGTGkQRX0gsbjAea/jYAoWv0ZvQRwpq
+Pe79D/i7Cep8qWnA+7AE/3B3S/3dEEYmc0lpe1366A/6GEgk3ktr9PEoQrLChs6I
+tu3wnNLB2euC8IKGLQFpGtOO/2/hiAKjyajaBP25w1jF0Wl8Bbqne3uZ2q1GyPFJ
+YRmT7/OXpmOH/FVLtwS+8ng1cAmpCujPwteJZNcDG0sF2n/sc0+SQf49fdyUK0ty
++VUwFj9tmWxyR/M=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=CN=3n7er.space
+issuer=C=US, O=Let's Encrypt, CN=E7
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ecdsa_secp256r1_sha256
+Negotiated TLS1.3 group: X25519MLKEM768
+---
+SSL handshake has read 3527 bytes and written 1631 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Protocol: TLSv1.3
+Server public key is 256 bit
+This TLS version forbids renegotiation.
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: D7B06A928CF937ED82AE0E045D69718A2EE0858774AFA6CDB83426821B8B0744
+    Session-ID-ctx: 
+    Resumption PSK: 3254F6DA787F1FBC97B7DFCCBF42FBA61DF2E827193863EE2775D56560BBF03C3BAF5DD3A744A4E0EFAA89A3F0CF29FC
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 2c 83 9d e8 89 43 75 03-dc 7d 48 16 90 92 18 e4   ,....Cu..}H.....
+    0010 - 7c 4d 87 7a b3 83 69 fc-90 f4 bf a9 b1 82 25 d5   |M.z..i.......%.
+    0020 - 7e 48 22 92 0a 6b 99 76-04 14 77 38 0e 42 6f cc   ~H"..k.v..w8.Bo.
+    0030 - 2d fe 92 0d 5e 35 3b 70-51 97 8e bd 56 c4 70 ac   -...^5;pQ...V.p.
+    0040 - aa a1 b1 cf 02 49 3f 4c-63 b8 4d 9a 1c e1 67 1c   .....I?Lc.M...g.
+    0050 - e3 fe 3b 8e 66 42 b0 85-7a 35 eb 01 95 2f a8 96   ..;.fB..z5.../..
+    0060 - 92 e9 e9 5d a0 04 44 ce-55 1d 27 91 b8 58 e5 94   ...]..D.U.'..X..
+    0070 - 1e fd 6c d5 e7 5a 23 ce-3a f4 4c b7 56 a0 fc af   ..l..Z#.:.L.V...
+    0080 - 71 f5 96 05 97 c6 6b 33-77 00 ab 84 61 bd a8 c7   q.....k3w...a...
+    0090 - 26 da 27 c9 0d 56 b1 2d-f8 85 70 cd 3a d8 30 b5   &.'..V.-..p.:.0.
+    00a0 - 79 cc c0 b3 35 c3 c6 67-7f 8c 6b 55 fd 70 64 d3   y...5..g..kU.pd.
+    00b0 - cd 76 43 21 35 b9 a8 78-fc 45 eb 7e b3 c2 9d 2b   .vC!5..x.E.~...+
+    00c0 - f8 c9 01 8e 64 74 19 65-bd f4 bf 9d 5f e0 b0 22   ....dt.e...._.."
+    00d0 - 98 26 87 45 81 b7 84 a5-2c 02 69 bf 4b cb 68 3c   .&.E....,.i.K.h<
+    00e0 - 51 25 3b 02 a3 61 45 08-80 d3 cd 77 4e 08 88 1e   Q%;..aE....wN...
+
+    Start Time: 1782697251
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 67C1D08549B180DAF117717FA5AAE9EDF973A8042329D4FEDC03D8D4419A95FF
+    Session-ID-ctx: 
+    Resumption PSK: 3E5AD9BC85EA6AE8CD19F171874C85E982C153085EFA86812BB54A30B9FAA0A5B47AD42BDACB0EB6E68B7E3CE4421A9D
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 300 (seconds)
+    TLS session ticket:
+    0000 - 2c 83 9d e8 89 43 75 03-dc 7d 48 16 90 92 18 e4   ,....Cu..}H.....
+    0010 - 1d 72 07 bb 59 13 c6 c1-b8 61 09 a4 62 04 8a cf   .r..Y....a..b...
+    0020 - 4f a9 c6 86 23 83 82 97-9c c5 82 bc b4 df 20 3b   O...#......... ;
+    0030 - 52 05 7a 1d e0 1a eb cf-85 cf a2 13 49 cf 7d 4e   R.z.........I.}N
+    0040 - 2a e2 c0 d8 41 00 dc b2-79 ea e3 4d 15 46 f9 99   *...A...y..M.F..
+    0050 - 1d 22 2d 86 1f f5 a9 6e-27 75 8d 50 19 64 39 2d   ."-....n'u.P.d9-
+    0060 - 5c c4 26 d4 08 a1 54 55-bd 6e 2d bd 71 68 ed b7   \.&...TU.n-.qh..
+    0070 - 9e fa 04 d6 e8 4b dd c0-79 86 fb a2 59 94 01 fc   .....K..y...Y...
+    0080 - cb de 78 48 68 e1 ca 1e-19 47 48 72 37 8c 39 57   ..xHh....GHr7.9W
+    0090 - 5f 2d 3e 82 4e e0 f7 72-5b 71 f6 f3 63 2f 82 39   _->.N..r[q..c/.9
+    00a0 - 28 f5 e4 f3 f6 06 5c 8d-25 91 78 81 ce e7 24 98   (.....\.%.x...$.
+    00b0 - 3a 06 b0 97 66 f4 8e 34-3e 20 91 89 c7 d0 c8 e3   :...f..4> ......
+    00c0 - 15 15 00 dc 9f 57 a8 ec-f6 c3 36 ff 58 2c 29 71   .....W....6.X,)q
+    00d0 - 01 a8 33 2f 00 26 1f 92-00 ec 09 16 bd e6 cc 71   ..3/.&.........q
+    00e0 - 93 2d 36 95 01 ad c1 05-b1 c6 f2 08 e0 8b 22 57   .-6..........."W
+
+    Start Time: 1782697251
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
